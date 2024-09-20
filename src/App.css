@@ -1,42 +1,75 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+App {
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .container {
+  margin: 30px auto;
+  width: 360px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .board {
+  width: 100%;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+  
+  .row {
+  display: flex;
+  }
+  
+  .square {
+  width: 60px;
+  height: 60px;
+  line-height: 30px;
+  background-color: darkgreen;
+  padding: 0;
+  }
+  
+  .put-square {
+  width: 60px;
+  height: 60px;
+  line-height: 30px;
+  background-color: green;
+  }
+  
+  .player {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+  }
+  
+  .opponent {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+  }
+  .othello-state {
+  text-align: left;
+  display: flex;
+  background-color: darkgray;
+  margin-top: 24px;
+  padding: 8px 16px;
+  font-size: 24px;
+  }
+  .result-state {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  }
+  .player-icon {
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 8px;
+  }
+  .opponent-icon {
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 8px;
+  }
+  
