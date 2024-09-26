@@ -36,16 +36,20 @@ function Game() {
   )
 }
 
-function Square({value}) {
+function Square() {
+  const [value, setValue] = useState(null);
+
   function handleClick (){
-    console.log('clicked!')
+    setValue('⚫︎');
   }
+
   return (
   <button
     className="square"
     onClick={handleClick}
-    >{value
-    }</button>
+    >
+      {value}
+    </button>
   );
 }
 
@@ -53,52 +57,51 @@ function Board() {
   return (
   <p>
   <div className="board-row">
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
+    <Square/>
+    <Square />
+    <Square />
+    <Square />
+    <Square />
   </div>
   <div className="board-row">
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
   </div>
   <div className="board-row">
-  <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
+  <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
   </div>
   <div className="board-row">
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
   </div>
   <div className="board-row"> 
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
   </div>
   <div className="board-row">
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
-    <Square value="1" />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
+    <Square />
   </div>
   </p>
   )
