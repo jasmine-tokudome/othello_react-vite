@@ -57,7 +57,8 @@ function Board() {
   return (
   <p>
   <div className="board-row">
-    <Square/>
+    <Square />
+    <Square />
     <Square />
     <Square />
     <Square />
