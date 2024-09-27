@@ -54,6 +54,11 @@ function Square() {
 }
 
 function Board() {
+  const [squares, setSquares] = useState(
+    Array.from({ length: 6 }, () => new Array(6).fill(null))
+  );
+  
+
   return (
   <p>
   <div className="board-row">
