@@ -57,10 +57,21 @@ function Board() {
   const [squares, setSquares] = useState(
     Array.from({ length: 6 }, () => new Array(6).fill(null))
   );
-  
+  // squares[3][3] に '⚫︎' を設定
+const updateSquare = () => {
+  const newSquares = squares.map((row, rowIndex) =>
+    row.map((col, colIndex) =>
+      rowIndex === 3 && colIndex === 3 ? '⚫︎' : col
+    )
+  );
+  setSquares(newSquares);
+};
+
+console.log(squares[3][3]);
+
 
   return (
-  <p>
+  <>
   <div className="board-row">
     <Square />
     <Square />
@@ -109,7 +120,7 @@ function Board() {
     <Square />
     <Square />
   </div>
-  </p>
+  </>
   )
  }
 
