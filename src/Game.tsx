@@ -54,21 +54,22 @@ function Square() {
 }
 
 function Board() {
-  const [squares, setSquares] = useState(
-    Array.from({ length: 6 }, () => new Array(6).fill(null))
+  const initialSquares = Array.from({ length: 6 }, () =>
+    new Array(6).fill(null)
   );
-  // squares[3][3] に '⚫︎' を設定
-const updateSquare = () => {
-  const newSquares = squares.map((row, rowIndex) =>
-    row.map((col, colIndex) =>
-      rowIndex === 3 && colIndex === 3 ? '⚫︎' : col
-    )
-  );
-  setSquares(newSquares);
-};
+
+  // 初期の配置を設定
+  initialSquares[3][3] = "⚫︎";
+  initialSquares[4][3] = "⚪︎";
+  initialSquares[3][4] = "⚪︎";
+  initialSquares[4][4] = "⚫︎";
+
+  const [squares, setSquares] = useState(initialSquares);
 
 console.log(squares[3][3]);
-
+console.log(squares[4][3]);
+console.log(squares[3][4]);
+console.log(squares[4][4]);
 
   return (
   <>
