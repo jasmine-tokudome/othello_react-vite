@@ -59,17 +59,14 @@ function Board() {
   );
 
   // 初期の配置を設定
+  initialSquares[2][2] = "⚫︎";
+  initialSquares[3][2] = "⚪︎";
+  initialSquares[2][3] = "⚪︎";
   initialSquares[3][3] = "⚫︎";
-  initialSquares[4][3] = "⚪︎";
-  initialSquares[3][4] = "⚪︎";
-  initialSquares[4][4] = "⚫︎";
 
   const [squares, setSquares] = useState(initialSquares);
 
-console.log(squares[3][3]);
-console.log(squares[4][3]);
-console.log(squares[3][4]);
-console.log(squares[4][4]);
+console.log(squares);
 
   return (
   <>
