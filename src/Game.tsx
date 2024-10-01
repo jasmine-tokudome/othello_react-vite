@@ -36,17 +36,12 @@ function Game() {
   )
 }
 
-function Square() {
-  const [value, setValue] = useState(null);
-
-  function handleClick (){
-    setValue('⚫︎');
-  }
+function Square({value, onSquareClick}) {
 
   return (
   <button
     className="square"
-    onClick={handleClick}
+    onClick={onSquareClick}
     >
       {value}
     </button>
@@ -68,55 +63,63 @@ function Board() {
 
 console.log(squares);
 
+function handleClick(row, col) {
+  const nextSquares = squares.map((r) => r.slice()); // 2次元配列をコピー
+  if (!nextSquares[row][col]) { // すでに値がある場合は上書きしない
+    nextSquares[row][col] = "⚫︎";
+    setSquares(nextSquares);
+  }
+}
+
   return (
   <>
   <div className="board-row">
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
+    <Square value={squares[0][0]} onSquareClick={() => handleClick()} />
+    <Square value={squares[0][1]} onSquareClick={() => handleClick(0)} />
+    <Square value={squares[0][2]} onSquareClick={() => handleClick()} />
+    <Square value={squares[0][3]} onSquareClick={() => handleClick(3)} />
+    <Square value={squares[0][4]} onSquareClick={() => handleClick(4)} />
+    <Square value={squares[0][5]} onSquareClick={() => handleClick(5)} />
   </div>
   <div className="board-row">
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
+    <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(1)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(2)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(3)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(4)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(5)} />
   </div>
   <div className="board-row">
-  <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
+    <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(1)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(2)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(3)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(4)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(5)} />
   </div>
   <div className="board-row">
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
+    <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(1)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(2)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(3)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(4)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(5)} />
   </div>
   <div className="board-row"> 
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
+    <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(1)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(2)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(3)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(4)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(5)} />
   </div>
   <div className="board-row">
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
-    <Square />
+  <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(1)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(2)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(3)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(4)} />
+    <Square value={squares[0]} onSquareClick={() => handleClick(5)} />
   </div>
   </>
   )
