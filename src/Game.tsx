@@ -49,6 +49,7 @@ function Square({value, onSquareClick}) {
 }
 
 function Board() {
+  const [blackIsNext, setBlackIsNext] = useState(true);
   const initialSquares = Array.from({ length: 6 }, () =>
     new Array(6).fill(null)
   );
@@ -69,6 +70,12 @@ function handleClick(row, col) {
     nextSquares[row][col] = "⚫︎";
     setSquares(nextSquares);
   }
+  if (blackIsNext) {
+      nextSquares[row][col] = "⚫︎";
+    } else {
+      nextSquares[row][col] = "⚪︎"
+    }
+    setBlackIsNext(!blackIsNext)
 }
 
   return (
