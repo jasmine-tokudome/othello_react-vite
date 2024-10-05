@@ -77,7 +77,7 @@ function handleClick(row, col) {
     }
     setBlackIsNext(!blackIsNext)
 }
-checkStone(yIndex, xIndex, player, board = this.board) {
+function checkStone(yIndex, xIndex, player, board = this.board) {
 
   //チェックする方向
   const directions = [
@@ -99,6 +99,19 @@ checkStone(yIndex, xIndex, player, board = this.board) {
   return change;
   }
 
+  const crossCheck = (board, currentPosition, yAxis, xAxis, player) => {
+    const change = [];
+    
+    // 石を置いた箇所からチェックを進めていく時にboardの端までチェックし終えたらチェックする処理を終了する
+    if (
+    currentPosition.yIndex + yAxis > 5 ||
+    currentPosition.yIndex + yAxis < 0 ||
+    currentPosition.xIndex + xAxis > 5 ||
+    currentPosition.xIndex + xAxis < 0
+    ) {
+    return change;
+    }
+    
   return (
     <>
       {squares.map((row, rowIndex) => (
