@@ -32,3 +32,29 @@ function checkStone(yIndex, xIndex, player, board = this.board) {
     ) {
     return change;
     }
+}
+
+export const crossCheck = (board, currentPosition, yAxis, xAxis, player) => {
+    const change = [];
+
+    if (
+        currentPosition.yIndex + yAxis > 5 ||
+        currentPosition.yIndex + yAxis < 0 ||
+        currentPosition.xIndex + xAxis > 5 ||
+        currentPosition.xIndex + xAxis < 0
+        ) {
+        return change;
+        }
+    }
+}
+    const nextPosition =
+    board[currentPosition.yIndex + yAxis][currentPosition.xIndex + xAxis];
+
+    if (!nextPosition || board[currentPosition.yIndex][currentPosition.xIndex]) {
+        return change;
+
+let _yAxis = yAxis;
+let _xAxis = xAxis;
+const total = [];
+
+export default crossCheck

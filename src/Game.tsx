@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './Game.css'
-import { crossCheck } from "./crossCheck";
+import { crossCheck } from "./crossCheck"
 
 function Game() {
   const [count, setCount] = useState(0)
