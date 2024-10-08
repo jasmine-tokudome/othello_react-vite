@@ -1,4 +1,4 @@
-function checkStone(yIndex, xIndex, player, board = this.board) {
+function checkStone(yIndex, xIndex, player, currentSquares = squares) {
 
   //チェックする方向
   const directions = [
@@ -14,7 +14,7 @@ function checkStone(yIndex, xIndex, player, board = this.board) {
   
   const change = [];
   directions.forEach((el) => {
-  const result = crossCheck(board,  { yIndex, xIndex }, el[0], el[1], player);
+  const result = crossCheck(currentSquares,  { yIndex, xIndex }, el[0], el[1], player);
   change.push(...result);
   });
   return change;
