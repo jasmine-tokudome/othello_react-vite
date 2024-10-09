@@ -65,7 +65,7 @@ function Board() {
 
 console.log(squares);
 
-function handleClick(row, col) {
+function handleClick(row: number, col: number) {
   const nextSquares = squares.map((r) => r.slice()); // 2次元配列をコピー
   if (!nextSquares[row][col]) { // すでに値がある場合は上書きしない
     nextSquares[row][col] = "⚫︎";

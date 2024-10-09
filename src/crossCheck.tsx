@@ -1,4 +1,4 @@
-function checkStone(yIndex, xIndex, player, currentSquares = squares) {
+function checkStone(rowIndex, colIndex, stoneColor, currentSquares = squares) {
 
   //チェックする方向
   const directions = [
@@ -14,47 +14,10 @@ function checkStone(yIndex, xIndex, player, currentSquares = squares) {
   
   const change = [];
   directions.forEach((el) => {
-  const result = crossCheck(currentSquares,  { yIndex, xIndex }, el[0], el[1], player);
+  const result = crossCheck(currentSquares,  { rowIndex, colIndex }, el[0], el[1], stoneColor);
   change.push(...result);
   });
   return change;
   }
-
-  const crossCheck = (board, currentPosition, yAxis, xAxis, player) => {
-    const change = [];
-    
-    // 石を置いた箇所からチェックを進めていく時にboardの端までチェックし終えたらチェックする処理を終了する
-    if (
-    currentPosition.yIndex + yAxis > 5 ||
-    currentPosition.yIndex + yAxis < 0 ||
-    currentPosition.xIndex + xAxis > 5 ||
-    currentPosition.xIndex + xAxis < 0
-    ) {
-    return change;
-    }
-}
-
-export const crossCheck = (board, currentPosition, yAxis, xAxis, player) => {
-    const change = [];
-
-    if (
-        currentPosition.yIndex + yAxis > 5 ||
-        currentPosition.yIndex + yAxis < 0 ||
-        currentPosition.xIndex + xAxis > 5 ||
-        currentPosition.xIndex + xAxis < 0
-        ) {
-        return change;
-        }
-    }
-}
-    const nextPosition =
-    board[currentPosition.yIndex + yAxis][currentPosition.xIndex + xAxis];
-
-    if (!nextPosition || board[currentPosition.yIndex][currentPosition.xIndex]) {
-        return change;
-
-let _yAxis = yAxis;
-let _xAxis = xAxis;
-const total = [];
 
 export default crossCheck
