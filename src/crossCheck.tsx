@@ -1,4 +1,4 @@
-function checkStone(rowIndex, colIndex, stoneColor, currentSquares = squares) {
+function checkStone(rowIndex: number, colIndex: number, stoneColor: any, currentSquares = squares) {
 
   //チェックする方向
   const directions = [
