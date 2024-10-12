@@ -7,7 +7,7 @@ import { crossCheck } from "./crossCheck"
 function Game() {
   const [count, setCount] = useState(0)
 
-  checkStone(rowIndex: number, colIndex: number, stoneColor: any, currentSquares = squares) {
+  const checkStone = (rowIndex: number, colIndex: number, stoneColor: any, currentSquares = squares) => {
 
     //チェックする方向
     const directions = [
@@ -28,7 +28,7 @@ function Game() {
     });
     return change;
     }
-    
+
   return (
     <>
       <div>
