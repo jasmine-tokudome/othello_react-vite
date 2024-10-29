@@ -5,7 +5,7 @@ import { crossCheck } from "./crossCheck"
 function Game() {
   const [count, setCount] = useState(0)
 
-  const checkStone = (rowIndex: number, colIndex: number, stoneColor: any, currentSquares = squares) => {
+  const checkStone = (rowIndex: number, colIndex: number, stoneColor: string, currentSquares = squares) => {
 
     //チェックする方向
     const directions = [
